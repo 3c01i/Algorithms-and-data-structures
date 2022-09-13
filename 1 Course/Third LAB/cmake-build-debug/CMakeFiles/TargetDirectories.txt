@@ -1,0 +1,3 @@
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Third LAB/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Third LAB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Third LAB/cmake-build-debug/CMakeFiles/Third_LAB.dir

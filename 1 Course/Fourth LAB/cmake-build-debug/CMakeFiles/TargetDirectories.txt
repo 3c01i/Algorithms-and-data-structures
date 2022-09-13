@@ -1,0 +1,8 @@
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/vector/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/vector/CMakeFiles/edit_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/vector/CMakeFiles/vector.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/vectorLib/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/vectorLib/CMakeFiles/edit_cache.dir
+/home/qapfuc/Documents/Nizhny-Novgorod-State-University/Fourth LAB/cmake-build-debug/vectorLib/CMakeFiles/vectorlib.dir

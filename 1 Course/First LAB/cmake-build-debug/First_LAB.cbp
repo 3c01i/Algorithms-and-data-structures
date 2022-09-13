@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="First_LAB"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="First_LAB">
+				<Option output="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug/First_LAB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/."/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 First_LAB"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="First_LAB/fast">
+				<Option output="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug/First_LAB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/."/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 First_LAB/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First\ LAB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Animals.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Animals.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Cat.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Cat.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/ColdAnimals.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/ColdAnimals.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Dog.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Dog.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Frog.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/MilckAnimals.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/MilckAnimals.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/SetOfAnimals.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/SetOfAnimals.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Snake.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/Snake.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/frog.h">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/main.cpp">
+			<Option target="First_LAB"/>
+		</Unit>
+		<Unit filename="/home/qapfuc/Documents/Nizhny-Novgorod-State-University/First LAB/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

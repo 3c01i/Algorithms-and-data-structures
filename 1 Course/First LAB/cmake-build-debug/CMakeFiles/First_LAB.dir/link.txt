@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/First_LAB.dir/main.cpp.o CMakeFiles/First_LAB.dir/Animals.cpp.o CMakeFiles/First_LAB.dir/Cat.cpp.o CMakeFiles/First_LAB.dir/ColdAnimals.cpp.o CMakeFiles/First_LAB.dir/Dog.cpp.o CMakeFiles/First_LAB.dir/Frog.cpp.o CMakeFiles/First_LAB.dir/MilckAnimals.cpp.o CMakeFiles/First_LAB.dir/Snake.cpp.o CMakeFiles/First_LAB.dir/SetOfAnimals.cpp.o -o First_LAB 

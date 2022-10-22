@@ -1,5 +1,5 @@
 #include "TVector.h"
-
+#include "../src/TVector.cpp"
 #include <gtest.h>
 
 using testing::Types;

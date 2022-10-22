@@ -7,19 +7,19 @@ template <class T>
 class TVector
 {
   protected:
-    unsigned int length;
+    int length;
     T* pMemory;
   public:
-    TVector(unsigned int _length = 1);
-    TVector(T* array, unsigned int _length);
+    TVector(int _length = 1);
+    TVector(T* array, int _length);
     TVector(const TVector& vector);
     TVector(TVector&& vector);
     ~TVector();
-    unsigned int GetLength();
-    void SetLength(unsigned int newlength);
+    int GetLength();
+    void SetLength(int newlength);
 
-    T& operator[](unsigned int index);
-    const T& operator[](unsigned int index) const;
+    T& operator[](int index);
+    const T& operator[](int index) const;
     bool operator==(const TVector& vector);
     bool operator!=(const TVector& vector);
     TVector operator+(T value);

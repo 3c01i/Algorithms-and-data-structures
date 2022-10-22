@@ -2,7 +2,7 @@
 #include "TVector.h"
 
 template <class T>
-TVector<T>::TVector(unsigned int _length)
+TVector<T>::TVector(int _length)
 {
   length = _length;
   if (length == 0)
@@ -10,13 +10,13 @@ TVector<T>::TVector(unsigned int _length)
     throw "Vector size should be greater than zero";
   }  
   pMemory = new T[length];
-  for (unsigned int i = 0; i < length; i++ )
+  for (int i = 0; i < length; i++ )
   {
     pMemory[i] = 0;
   }
 }
 template <class T>
-TVector<T>::TVector(T* array, unsigned int _length)
+TVector<T>::TVector(T* array, int _length)
 {
   length = _length;
   if (length == 0)
@@ -27,7 +27,7 @@ TVector<T>::TVector(T* array, unsigned int _length)
   {
     throw "You array = nullptr";
   }
-  for (unsigned int i = 0; i < length; i++ )
+  for (int i = 0; i < length; i++ )
   {
     pMemory[i] = array[i];
   }
@@ -35,12 +35,12 @@ TVector<T>::TVector(T* array, unsigned int _length)
 template <class T>
 TVector<T>::TVector(const TVector& vector)
 {
-  if (*this == *vector)
+  if (*this == vector)
   {
     throw "You vector don`t unique";
   }
   length = vector.length;
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] = vector.pMemory[i];
   }
@@ -54,7 +54,7 @@ TVector<T>::TVector(TVector&& vector)
   }
   length = vector.length;
   pMemory = new T[length];
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] = vector.pMemory[i];
   }
@@ -73,29 +73,29 @@ TVector<T>::~TVector()
   pMemory =  nullptr;
 }
 template <class T>
-unsigned int TVector<T>::GetLength()
+int TVector<T>::GetLength()
 {
   return length;
 }
 template <class T>
-void TVector<T>::SetLength(unsigned int newlength)
+void TVector<T>::SetLength(int newlength)
 {
   if (newlength != length)
   {
     T* newpMemory = new T[newlength];
-    for (unsigned int i = 0; i < std::min(length,newlength); i++)
+    for (int i = 0; i < std::min(length,newlength); i++)
     {
       newpMemory[i] = pMemory[i];      
     }
     delete[] pMemory;
     pMemory = new T[newlength];
-    for (unsigned int i = 0; i < std::min(length,newlength); i++)
+    for (int i = 0; i < std::min(length,newlength); i++)
     {
        pMemory[i] = newpMemory[i];
     }
     if (newlength > length)
     {
-      for (unsigned int i = length; i < newlength; i++)
+      for (int i = length; i < newlength; i++)
       {
         pMemory[i] = 0;
       }
@@ -106,14 +106,14 @@ void TVector<T>::SetLength(unsigned int newlength)
 }
 
 template <class T>
-T& TVector<T>::operator[](unsigned int index)
+T& TVector<T>::operator[](int index)
 {
-  return &pMemory[index];
+  return pMemory[index];
 }
 template <class T>
-const T& TVector<T>::operator[](unsigned int index) const
+const T& TVector<T>::operator[](int index) const
 {
-  return &pMemory[index];
+  return pMemory[index];
 }
 template <class T>
 bool TVector<T>::operator==(const TVector& vector)
@@ -122,7 +122,7 @@ bool TVector<T>::operator==(const TVector& vector)
   {
     return false;
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     if (pMemory != vector.pMemory)
     {
@@ -138,7 +138,7 @@ bool TVector<T>::operator!=(const TVector& vector)
    {
      return true;
    }
-   for (unsigned int i = 0; i < length; i++)
+   for (int i = 0; i < length; i++)
    {
      if (pMemory != vector.pMemory)
      {
@@ -154,11 +154,11 @@ TVector<T> TVector<T>::operator+(T value)
   {
     throw "You length = 0 or pMemory = nullptr";
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] += value;
   }
-  return this;  
+  return *this;
 }
 template <class T>
 TVector<T> TVector<T>::operator-(T value)
@@ -167,11 +167,11 @@ TVector<T> TVector<T>::operator-(T value)
   {
     throw "You length = 0 or pMemory = nullptr";
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] -= value;
   }
-  return this;
+  return *this;
 }
 template <class T>
 TVector<T> TVector<T>::operator*(T value)
@@ -180,11 +180,11 @@ TVector<T> TVector<T>::operator*(T value)
   {
     throw "You length = 0 or pMemory = nullptr";
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] *= value;
   }
-  return this;
+  return *this;
 }
 template <class T>
 TVector<T> TVector<T>::operator+(const TVector& vector)
@@ -197,11 +197,11 @@ TVector<T> TVector<T>::operator+(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] += vector.pMemory[i];
   }
-  return this;
+  return *this;
 }
 template <class T>
 TVector<T> TVector<T>::operator-(const TVector& vector)
@@ -214,11 +214,11 @@ TVector<T> TVector<T>::operator-(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] -= vector.pMemory[i];
   }
-  return this;
+  return *this;
 }
 template <class T>
 T TVector<T>::operator*(const TVector& vector)
@@ -232,7 +232,7 @@ T TVector<T>::operator*(const TVector& vector)
     throw "Length first vector != length second vector";
   }
   T result = 0;
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     result *= pMemory[i]*vector.pMemory[i];
   } 
@@ -249,11 +249,11 @@ TVector<T>& TVector<T>::operator=(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] = vector.pMemory[i];
   }
-  return &this;
+  return *this;
 }
 template <class T>
 TVector<T>& TVector<T>::operator=(TVector&& vector)
@@ -265,7 +265,7 @@ TVector<T>& TVector<T>::operator=(TVector&& vector)
   length = vector.length;
   delete[] pMemory;
   pMemory = new T[length];
-  for (unsigned int i = 0; i < length; i++)
+  for (int i = 0; i < length; i++)
   {
     pMemory[i] = vector.pMemory[i];
   }
@@ -276,7 +276,7 @@ TVector<T>& TVector<T>::operator=(TVector&& vector)
 template <class T>
 std::istream& operator>>(std::istream& istr, TVector<T>& vector)
 {
-  for (unsigned int i = 0; i < vector.length; i++)
+  for (int i = 0; i < vector.length; i++)
   {
     istr >> vector.pMemory[i];
   }
@@ -285,7 +285,7 @@ std::istream& operator>>(std::istream& istr, TVector<T>& vector)
 template <class T>
 std::ostream& operator<<(std::ostream& ostr, const TVector<T>& vector)
 {
-  for (unsigned int i = 0; i < vector.length; i++)
+  for (int i = 0; i < vector.length; i++)
   {
     ostr << vector.pMemory[i]<<' ';
   }

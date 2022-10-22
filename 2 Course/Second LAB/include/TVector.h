@@ -1,7 +1,7 @@
 #ifndef __TVECTOR_H__
 #define __TVECTOR_H__
 
-#include <iosteam>
+#include <iostream>
 
 template <class T>
 class TVector
@@ -31,8 +31,8 @@ class TVector
     TVector& operator=(const TVector& vector);
     TVector& operator=(TVector&& vector);
 
-    friend istream& operator>>(istream& istr, TVector& vector);
-    friend ostream& operator<<(ostream& ostr, const TVector& vector);
+    friend std::istream& operator>>(std::istream& istr, TVector& vector);
+    friend std::ostream& operator<<(std::ostream& ostr, const TVector& vector);
 };
 
 #endif

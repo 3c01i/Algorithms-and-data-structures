@@ -1,0 +1,8 @@
+# ninja log v5
+0	23	1666460209088102299	src/CMakeFiles/matrix.dir/TMatrix.cpp.o	af1ab4bba65ee4ba
+1	470	1666460209534768951	src/CMakeFiles/matrix.dir/TVector.cpp.o	2618c55fb56e354b
+472	505	1666460209568102283	lib/libmatrix.a	6866da9a7528b7f8
+24	1688	1666460210751435573	test/CMakeFiles/test_matrix.dir/test_main.cpp.o	86cb8902bc6b763d
+506	2658	1666460211718102201	test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o	b3c0dca7ad800705
+1	3968	1666460213028102155	gtest/CMakeFiles/gtest.dir/gtest-all.cc.o	f489e4979d987f7f
+3968	4027	1666460213088102152	lib/libgtest.a	79ff93dcad318789

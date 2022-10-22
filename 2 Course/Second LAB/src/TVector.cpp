@@ -41,7 +41,7 @@ TVector<T>::TVector(T* array, int _length)
 template <class T>
 TVector<T>::TVector(const TVector& vector)
 {
-  if (*this == vector || vector.length <= 0 || vector.pMemory == nullptr )
+  if ( *this == vector || vector.length <= 0 || vector.pMemory == nullptr )
   {
     throw "You vector don`t unique";
   }
@@ -71,10 +71,6 @@ TVector<T>::TVector(TVector&& vector)
 template <class T>
 TVector<T>::~TVector()
 {
-  if (pMemory == nullptr)
-  {
-    throw "Never use ~ for nullptr array";
-  }
   length = 0;
   delete[] pMemory;
   pMemory =  nullptr;
@@ -125,13 +121,17 @@ const T& TVector<T>::operator[](int index) const
 template <class T>
 bool TVector<T>::operator==(const TVector& vector)
 {
+    if (vector.pMemory == nullptr)
+    {
+      throw "kill me pls";
+    }
   if(length != vector.length)
   {
     return false;
   }
   for (int i = 0; i < length; i++)
   {
-    if (pMemory != vector.pMemory)
+    if (pMemory[i] != vector.pMemory[i])
     {
       return false;
     }
@@ -141,13 +141,17 @@ bool TVector<T>::operator==(const TVector& vector)
 template <class T>
 bool TVector<T>::operator!=(const TVector& vector)
 {
+    if (vector.pMemory == nullptr)
+    {
+        throw "kill me pls";
+    }
   if(length != vector.length)
    {
      return true;
    }
    for (int i = 0; i < length; i++)
    {
-     if (pMemory != vector.pMemory)
+     if (pMemory[i] != vector.pMemory[i])
      {
        return true;
      }
@@ -241,13 +245,17 @@ T TVector<T>::operator*(const TVector& vector)
   T result = 0;
   for (int i = 0; i < length; i++)
   {
-    result *= pMemory[i]*vector.pMemory[i];
+    result += pMemory[i]*vector.pMemory[i];
   } 
   return result;
 }
 template <class T>
 TVector<T>& TVector<T>::operator=(const TVector& vector)
 {
+  if (*this == vector)
+  {
+    throw "this == this";
+  }
   if (length == 0 || pMemory == nullptr || vector.length == 0 || vector.pMemory == nullptr)
   { 
     throw "You length = 0 or pMemory = nullptr";

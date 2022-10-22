@@ -1,5 +1,0 @@
-# ninja log v5
-2	150	1666455569178272394	lib/libgtest.a	79ff93dcad318789
-29	1378	1666455121281622113	test/CMakeFiles/test_matrix.dir/test_main.cpp.o	86cb8902bc6b763d
-1	4009	1666455123908288683	gtest/CMakeFiles/gtest.dir/gtest-all.cc.o	f489e4979d987f7f
-0	28	1666455119931622163	src/CMakeFiles/matrix.dir/TMatrix.cpp.o	af1ab4bba65ee4ba

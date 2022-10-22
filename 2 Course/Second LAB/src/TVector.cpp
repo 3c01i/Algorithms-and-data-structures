@@ -2,6 +2,12 @@
 #include "TVector.h"
 
 template <class T>
+TVector<T>::TVector()
+{
+  length = NULL;
+  pMemory = nullptr;
+}
+template <class T>
 TVector<T>::TVector(int _length)
 {
   length = _length;
@@ -35,11 +41,12 @@ TVector<T>::TVector(T* array, int _length)
 template <class T>
 TVector<T>::TVector(const TVector& vector)
 {
-  if (*this == vector)
+  if (*this == vector || vector.length <= 0 || vector.pMemory == nullptr )
   {
     throw "You vector don`t unique";
   }
   length = vector.length;
+  pMemory = new T[length];
   for (int i = 0; i < length; i++)
   {
     pMemory[i] = vector.pMemory[i];

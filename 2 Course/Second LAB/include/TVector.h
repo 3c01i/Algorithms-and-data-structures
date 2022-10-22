@@ -10,7 +10,8 @@ class TVector
     int length;
     T* pMemory;
   public:
-    TVector(int _length = 1);
+    TVector();
+    TVector(int _length);
     TVector(T* array, int _length);
     TVector(const TVector& vector);
     TVector(TVector&& vector);

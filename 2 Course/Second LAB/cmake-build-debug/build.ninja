@@ -224,6 +224,15 @@ build test/CMakeFiles/test_matrix.dir/test_main.cpp.o: CXX_COMPILER__test_matrix
   TARGET_COMPILE_PDB = test/CMakeFiles/test_matrix.dir/
   TARGET_PDB = bin/test_matrix.pdb
 
+build test/CMakeFiles/test_matrix.dir/test_tmatrix.cpp.o: CXX_COMPILER__test_matrix_Debug /home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2$ Course/Second$ LAB/test/test_tmatrix.cpp || cmake_object_order_depends_target_test_matrix
+  DEP_FILE = test/CMakeFiles/test_matrix.dir/test_tmatrix.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I"/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/include" -I"/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/gtest" -I"/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/test/../3rdparty"
+  OBJECT_DIR = test/CMakeFiles/test_matrix.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/test_matrix.dir
+  TARGET_COMPILE_PDB = test/CMakeFiles/test_matrix.dir/
+  TARGET_PDB = bin/test_matrix.pdb
+
 build test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o: CXX_COMPILER__test_matrix_Debug /home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2$ Course/Second$ LAB/test/test_tvector.cpp || cmake_object_order_depends_target_test_matrix
   DEP_FILE = test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o.d
   FLAGS = -g
@@ -241,7 +250,7 @@ build test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o: CXX_COMPILER__test_mat
 #############################################
 # Link the executable bin/test_matrix
 
-build bin/test_matrix: CXX_EXECUTABLE_LINKER__test_matrix_Debug test/CMakeFiles/test_matrix.dir/test_main.cpp.o test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o | lib/libgtest.a lib/libmatrix.a || lib/libgtest.a lib/libmatrix.a
+build bin/test_matrix: CXX_EXECUTABLE_LINKER__test_matrix_Debug test/CMakeFiles/test_matrix.dir/test_main.cpp.o test/CMakeFiles/test_matrix.dir/test_tmatrix.cpp.o test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o | lib/libgtest.a lib/libmatrix.a || lib/libgtest.a lib/libmatrix.a
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = lib/libgtest.a  lib/libmatrix.a  -pthread

@@ -9,22 +9,25 @@ class TMatrix:public TVector<TVector<T>>
 {
   protected:
     TVector<T>* pMemory;
-    unsigned int length;
+    int length;
   public:
     TMatrix();
-    TMatrix(unsigned int length);
+    TMatrix(int _length);
     ~TMatrix();
 
-    const unsigned int GetLength();
+    const int GetLength();
 
     using TVector<TVector<T>>::operator[];
     bool operator==(const TMatrix& matrix);
+    bool operator!=(const TMatrix& matrix);
     TMatrix operator+(const TMatrix& matrix);
     TMatrix operator-(const TMatrix& matrix);
     TMatrix operator*(const TMatrix& matrix);
+    TVector<T> operator*(TVector<T>& vector);
     TMatrix operator*(const T input);
 
-
+    friend std::istream& operator>>(std::istream& istr, TMatrix& matrix);
+    friend std::ostream& operator<<(std::ostream& ostr, const TMatrix& matrix);
 
 };
 

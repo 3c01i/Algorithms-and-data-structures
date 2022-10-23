@@ -72,7 +72,6 @@ template <class T>
 TVector<T>::~TVector()
 {
   length = 0;
-  delete[] pMemory;
   pMemory =  nullptr;
 }
 template <class T>
@@ -111,7 +110,14 @@ void TVector<T>::SetLength(int newlength)
 template <class T>
 T& TVector<T>::operator[](int index)
 {
+  if (pMemory != nullptr)
+  {
   return pMemory[index];
+  }
+  else
+  {
+    throw "SIGSEGV";
+  }
 }
 template <class T>
 const T& TVector<T>::operator[](int index) const
@@ -286,7 +292,7 @@ TVector<T>& TVector<T>::operator=(TVector&& vector)
   }
   vector.length = 0;
   delete[] vector.pMemory;
-  return &this;
+  return *this;
 }
 template <class T>
 std::istream& operator>>(std::istream& istr, TVector<T>& vector)

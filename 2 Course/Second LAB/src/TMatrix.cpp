@@ -10,7 +10,8 @@ TMatrix<T>::TMatrix()
 template<class T>
 TMatrix<T>::TMatrix(int _length)
 {
-  if (_length > 0) {
+  if (_length > 0)
+  {
     length = _length;
     pMemory = new TVector<T>[length];
     for (int i = 0; i < length; i++)

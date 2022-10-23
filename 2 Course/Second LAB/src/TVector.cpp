@@ -11,7 +11,7 @@ template <class T>
 TVector<T>::TVector(int _length)
 {
   length = _length;
-  if (length == 0)
+  if (length <= 0)
   {
     throw "Vector size should be greater than zero";
   }  
@@ -67,11 +67,16 @@ TVector<T>::TVector(TVector&& vector)
   }
   delete[] vector.pMemory;
   vector.length = 0;
+  vector.pMemory = nullptr;
 }
 template <class T>
 TVector<T>::~TVector()
 {
   length = 0;
+  if (pMemory != nullptr)
+  {
+    delete[] pMemory;
+  }
   pMemory =  nullptr;
 }
 template <class T>
@@ -82,6 +87,10 @@ int TVector<T>::GetLength()
 template <class T>
 void TVector<T>::SetLength(int newlength)
 {
+  if (newlength <= 0 )
+  {
+    throw "kill me";
+  }
   if (newlength != length)
   {
     T* newpMemory = new T[newlength];
@@ -178,11 +187,12 @@ TVector<T> TVector<T>::operator+(T value)
   {
     throw "You length = 0 or pMemory = nullptr";
   }
+  TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
   {
-    pMemory[i] += value;
+    Result.pMemory[i] = pMemory[i] + value;
   }
-  return *this;
+  return Result;
 }
 template <class T>
 TVector<T> TVector<T>::operator-(T value)
@@ -191,11 +201,12 @@ TVector<T> TVector<T>::operator-(T value)
   {
     throw "You length = 0 or pMemory = nullptr";
   }
+  TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
   {
-    pMemory[i] -= value;
+    Result.pMemory[i] = pMemory[i] - value;
   }
-  return *this;
+  return Result;
 }
 template <class T>
 TVector<T> TVector<T>::operator*(T value)
@@ -204,11 +215,12 @@ TVector<T> TVector<T>::operator*(T value)
   {
     throw "You length = 0 or pMemory = nullptr";
   }
+  TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
   {
-    pMemory[i] *= value;
+    Result.pMemory[i] = pMemory[i] * value;
   }
-  return *this;
+  return Result;
 }
 template <class T>
 TVector<T> TVector<T>::operator+(const TVector& vector)
@@ -221,11 +233,12 @@ TVector<T> TVector<T>::operator+(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
+  TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
   {
-    pMemory[i] += vector.pMemory[i];
+    Result.pMemory[i] = pMemory[i] + vector.pMemory[i];
   }
-  return *this;
+  return Result;
 }
 template <class T>
 TVector<T> TVector<T>::operator-(const TVector& vector)
@@ -238,11 +251,12 @@ TVector<T> TVector<T>::operator-(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
+  TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
   {
-    pMemory[i] -= vector.pMemory[i];
+    Result.pMemory[i] = pMemory[i] - vector.pMemory[i];
   }
-  return *this;
+  return Result;
 }
 template <class T>
 T TVector<T>::operator*(const TVector& vector)
@@ -255,12 +269,12 @@ T TVector<T>::operator*(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
-  T result = 0;
+  T Result = 0;
   for (int i = 0; i < length; i++)
   {
-    result += pMemory[i]*vector.pMemory[i];
+    Result += pMemory[i]*vector.pMemory[i];
   } 
-  return result;
+  return Result;
 }
 template <class T>
 TVector<T>& TVector<T>::operator=(const TVector& vector)
@@ -277,12 +291,16 @@ TVector<T>& TVector<T>::operator=(const TVector& vector)
   {
     throw "Length first vector != length second vector";
   }
+  delete[] pMemory;
+  pMemory = new T[vector.length];
   for (int i = 0; i < length; i++)
   {
     pMemory[i] = vector.pMemory[i];
   }
+  length = vector.length;
   return *this;
 }
+
 template <class T>
 TVector<T>& TVector<T>::operator=(TVector&& vector)
 {
@@ -299,6 +317,7 @@ TVector<T>& TVector<T>::operator=(TVector&& vector)
   }
   vector.length = 0;
   delete[] vector.pMemory;
+  vector.pMemory = nullptr;
   return *this;
 }
 template <class T>

@@ -122,7 +122,14 @@ T& TVector<T>::operator[](int index)
 template <class T>
 const T& TVector<T>::operator[](int index) const
 {
-  return pMemory[index];
+  if (pMemory != nullptr)
+  {
+    return pMemory[index];
+  }
+  else
+  {
+    throw "SIGSEGV";
+  }
 }
 template <class T>
 bool TVector<T>::operator==(const TVector& vector)

@@ -12,12 +12,12 @@ typedef Types<int, double> Implementations;
 
 TYPED_TEST_CASE(TMatrixTest, Implementations);
 
-/*
+
 TYPED_TEST(TMatrixTest, can_create_matrix_with_positive_length)
 {
   ASSERT_NO_THROW(TMatrix<TypeParam> mat(3));
 }
-*/
+
 
 TYPED_TEST(TMatrixTest, can_not_create_matrix_with_negative_length)
 {

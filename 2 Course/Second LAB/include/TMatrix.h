@@ -5,11 +5,10 @@
 #include "TVector.h"
 
 template <class T>
-class TMatrix:public TVector<TVector<T>>
+class TMatrix:protected TVector<TVector<T>>
 {
-  protected:
-    TVector<T>* pMemory;
-    int length;
+    using TVector<TVector<T>>::pMemory;
+    using TVector<TVector<T>>::length;
   public:
     TMatrix();
     TMatrix(int _length);

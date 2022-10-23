@@ -15,7 +15,7 @@ TMatrix<T>::TMatrix(int _length)
     pMemory = new TVector<T>[length];
     for (int i = 0; i < length; i++)
     {
-      pMemory[i] = TVector<T>(i + 1);
+      pMemory[i] = TVector<T>(i+1);
     }
   }
   else

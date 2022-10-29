@@ -1,0 +1,11 @@
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/src/CMakeFiles/matrix.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/src/CMakeFiles/edit_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/src/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/gtest/CMakeFiles/gtest.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/gtest/CMakeFiles/edit_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/gtest/CMakeFiles/rebuild_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/test/CMakeFiles/test_matrix.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/test/CMakeFiles/edit_cache.dir
+/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release/test/CMakeFiles/rebuild_cache.dir

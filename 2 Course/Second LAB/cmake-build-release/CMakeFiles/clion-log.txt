@@ -1,0 +1,43 @@
+/opt/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/opt/clion/bin/ninja/linux/ninja -G Ninja -S "/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB" -B "/home/qapfuc/AlgorithmsAndDataStructures/Algorithms-and-data-structures/2 Course/Second LAB/cmake-build-release"
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- 
+-- General configuration for matrix
+-- ======================================
+-- 
+--    Configuration: Release
+-- 
+-- Configuring done
+CMake Error at src/CMakeLists.txt:6 (add_library):
+  Cannot find source file:
+
+    TSqMatrix.h
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at test/CMakeLists.txt:8 (add_executable):
+  Cannot find source file:
+
+    ../src/TSqMatrix.h
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at src/CMakeLists.txt:6 (add_library):
+  No SOURCES given to target: matrix
+
+
+CMake Error at test/CMakeLists.txt:8 (add_executable):
+  No SOURCES given to target: test_matrix
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

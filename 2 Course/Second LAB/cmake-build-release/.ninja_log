@@ -19,3 +19,8 @@
 776	871	1667073563851576888	lib/libgtest.a	31beb8feba68cf6b
 7	6110	1667073569094910027	test/CMakeFiles/test_matrix.dir/test_tmatrix.cpp.o	12bd8dd17df2b72c
 6110	6227	1667073569211576689	bin/test_matrix	602ce43dfa22084c
+2	493	1667077325596657452	src/CMakeFiles/matrix.dir/TVector.cpp.o	4cc00d24f593e999
+493	573	1667077325676657448	lib/libmatrix.a	57566bc12091cd6c
+6	4080	1667077329183323985	test/CMakeFiles/test_matrix.dir/test_tvector.cpp.o	79a6bb3e451911a0
+2	5752	1667077330856657256	test/CMakeFiles/test_matrix.dir/test_tmatrix.cpp.o	12bd8dd17df2b72c
+5752	5867	1667077330969990586	bin/test_matrix	602ce43dfa22084c

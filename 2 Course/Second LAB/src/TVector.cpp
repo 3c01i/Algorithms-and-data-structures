@@ -60,11 +60,7 @@ TVector<T>::TVector(TVector&& vector)
     throw "Error TVector please check you code";
   }
   length = vector.length;
-  pMemory = new T[length];
-  for (int i = 0; i < length; i++)
-  {
-    pMemory[i] = vector.pMemory[i];
-  }
+  pMemory = vector.pMemory;
   delete[] vector.pMemory;
   vector.length = 0;
   vector.pMemory = nullptr;

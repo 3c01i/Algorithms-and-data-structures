@@ -1,31 +1,14 @@
-#include "TVector.h"
+#include "TFormuls.h"
 #include <gtest.h>
 
 using testing::Types;
 
 template <class>
-class TVectorTest : public testing::Test {};
-typedef Types<int, double> Implementations;
-TYPED_TEST_CASE(TVectorTest, Implementations);
-
-TYPED_TEST(TVectorTest, can_create_vector_with_positive_size)
-{
-  ASSERT_NO_THROW(TVector<TypeParam> vec(3));
-}
-
-TYPED_TEST(TVectorTest, can_not_create_vector_with_negative_size)
-{
-  ASSERT_ANY_THROW(TVector<TypeParam> vec(-1));
-}
+class TFormulsTest : public testing::Test {};
+TYPED_TEST_CASE(TFormulsTest, Implementations);
 
 TYPED_TEST(TVectorTest, can_create_vector_from_other_vector)
 {
-  TVector<TypeParam> vec1(2);
-  vec1[0] = 0;
-  vec1[1] = 1;
-  TVector<TypeParam> vec2(vec1);
-  EXPECT_EQ(vec1.GetLength(), vec2.GetLength());
-  EXPECT_EQ(vec1[0], vec2[0]);
   EXPECT_EQ(vec1[1], vec2[1]);
 }
 

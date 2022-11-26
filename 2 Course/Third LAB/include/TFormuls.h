@@ -25,7 +25,8 @@ private:
 public:
   TFormuls(const std::string& infixforms);
   void Process();
-  int Calculate();
+  bool CheckFormuls();
+  double Calculate();
 
   std::string GetPostfix();
 };
@@ -69,8 +70,29 @@ void TFormuls::Process()
     operand.Pop();
   }
 }
-
-int TFormuls::Calculate()
+bool TFormuls::CheckFormuls()
+{
+  TStack<bool> stack;
+  for (const char& elem : infix)
+  {
+    if (elem == '(')
+    {
+      stack.Push(true);
+      continue;
+    }
+    if (elem == ')')
+    {
+      if (stack.Empty())
+        return false;
+      stack.Pop();
+      continue;
+    }
+  }
+  if (!stack.Empty())
+    return false;
+  return true;
+}
+double TFormuls::Calculate()
 {
   for (char element : postfix)
   {

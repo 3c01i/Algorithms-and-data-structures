@@ -3,7 +3,7 @@
 First Lab - 10 score
 Second Lab - 15 score
 Third Lab - 9 score
-Fourth Lab - check
+Fourth Lab - 17 score
 Finaly: Very good
 
 2 Course :

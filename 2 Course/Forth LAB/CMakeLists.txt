@@ -24,7 +24,6 @@ include_directories("${MP2_INCLUDE}" gtest)
 add_subdirectory(src)
 add_subdirectory(gtest)
 add_subdirectory(test)
-add_subdirectory(samples)
 
 # REPORT
 message( STATUS "")

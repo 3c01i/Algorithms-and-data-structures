@@ -1,6 +1,40 @@
-#include <iostream>
-#include "TVector.h"
+#ifndef __TVECTOR_H__
+#define __TVECTOR_H__
 
+#include <iostream>
+
+template <class T>
+class TVector
+{
+  protected:
+    int length;
+    T* pMemory;
+  public:
+    TVector();
+    TVector(int _length);
+    TVector(T* array, int _length);
+    TVector(const TVector& vector);
+    TVector(TVector&& vector);
+    ~TVector();
+    int GetLength();
+    void SetLength(int newlength);
+
+    T& operator[](int index);
+    const T& operator[](int index) const;
+    bool operator==(const TVector& vector);
+    bool operator!=(const TVector& vector);
+    TVector operator+(T value);
+    TVector operator-(T value);
+    TVector operator*(T value);
+    TVector operator+(const TVector& vector);
+    TVector operator-(const TVector& vector);
+    T operator*(const TVector& vector);
+    TVector& operator=(const TVector& vector);
+    TVector& operator=(TVector&& vector);
+
+    friend std::istream& operator>>(std::istream& istr, TVector& vector);
+    friend std::ostream& operator<<(std::ostream& ostr, const TVector& vector);
+};
 template <class T>
 TVector<T>::TVector()
 {
@@ -13,8 +47,8 @@ TVector<T>::TVector(int _length)
   length = _length;
   if (length <= 0)
   {
-    throw "Vector size should be greater than zero";
-  }  
+    throw std::range_error("Vector size should be greater than zero");
+  }
   pMemory = new T[length];
   for (int i = 0; i < length; i++ )
   {
@@ -27,11 +61,11 @@ TVector<T>::TVector(T* array, int _length)
   length = _length;
   if (length == 0)
   {
-    throw "Array size should be greater than zero";
+    throw std::range_error("Array size should be greater than zero");
   }
   if (array == nullptr)
   {
-    throw "You array = nullptr";
+    throw std::range_error("You array = nullptr");
   }
   for (int i = 0; i < length; i++ )
   {
@@ -43,7 +77,7 @@ TVector<T>::TVector(const TVector& vector)
 {
   if ( *this == vector || vector.length <= 0 || vector.pMemory == nullptr )
   {
-    throw "You vector don`t unique";
+    throw std::range_error("You vector don`t unique");
   }
   length = vector.length;
   pMemory = new T[length];
@@ -57,14 +91,10 @@ TVector<T>::TVector(TVector&& vector)
 {
   if (vector.length == 0 || vector.pMemory == nullptr || *this == vector )
   {
-    throw "Error TVector please check you code";
+    throw std::range_error("Error TVector please check you code");
   }
   length = vector.length;
-  pMemory = new T[length];
-  for (int i = 0; i < length; i++)
-  {
-    pMemory[i] = vector.pMemory[i];
-  }
+  pMemory = vector.pMemory;
   delete[] vector.pMemory;
   vector.length = 0;
   vector.pMemory = nullptr;
@@ -89,20 +119,20 @@ void TVector<T>::SetLength(int newlength)
 {
   if (newlength <= 0 )
   {
-    throw "kill me";
+    throw std::range_error("kill me");
   }
   if (newlength != length)
   {
     T* newpMemory = new T[newlength];
     for (int i = 0; i < std::min(length,newlength); i++)
     {
-      newpMemory[i] = pMemory[i];      
+      newpMemory[i] = pMemory[i];
     }
     delete[] pMemory;
     pMemory = new T[newlength];
     for (int i = 0; i < std::min(length,newlength); i++)
     {
-       pMemory[i] = newpMemory[i];
+      pMemory[i] = newpMemory[i];
     }
     if (newlength > length)
     {
@@ -121,11 +151,11 @@ T& TVector<T>::operator[](int index)
 {
   if (pMemory != nullptr)
   {
-  return pMemory[index];
+    return pMemory[index];
   }
   else
   {
-    throw "SIGSEGV";
+    throw std::range_error("SIGSEGV");
   }
 }
 template <class T>
@@ -137,16 +167,16 @@ const T& TVector<T>::operator[](int index) const
   }
   else
   {
-    throw "SIGSEGV";
+    throw std::range_error("SIGSEGV");
   }
 }
 template <class T>
 bool TVector<T>::operator==(const TVector& vector)
 {
-    if (vector.pMemory == nullptr)
-    {
-      throw "kill me pls";
-    }
+  if (vector.pMemory == nullptr)
+  {
+    throw std::range_error("kill me pls");
+  }
   if(length != vector.length)
   {
     return false;
@@ -163,29 +193,29 @@ bool TVector<T>::operator==(const TVector& vector)
 template <class T>
 bool TVector<T>::operator!=(const TVector& vector)
 {
-    if (vector.pMemory == nullptr)
-    {
-        throw "kill me pls";
-    }
+  if (vector.pMemory == nullptr)
+  {
+    throw std::range_error("kill me pls");
+  }
   if(length != vector.length)
-   {
-     return true;
-   }
-   for (int i = 0; i < length; i++)
-   {
-     if (pMemory[i] != vector.pMemory[i])
-     {
-       return true;
-     }
-   }
-   return false;
+  {
+    return true;
+  }
+  for (int i = 0; i < length; i++)
+  {
+    if (pMemory[i] != vector.pMemory[i])
+    {
+      return true;
+    }
+  }
+  return false;
 }
 template <class T>
 TVector<T> TVector<T>::operator+(T value)
 {
   if (length == 0 || pMemory == nullptr)
   {
-    throw "You length = 0 or pMemory = nullptr";
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
@@ -199,7 +229,7 @@ TVector<T> TVector<T>::operator-(T value)
 {
   if (length == 0 || pMemory == nullptr)
   {
-    throw "You length = 0 or pMemory = nullptr";
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
@@ -213,7 +243,7 @@ TVector<T> TVector<T>::operator*(T value)
 {
   if (length == 0 || pMemory == nullptr)
   {
-    throw "You length = 0 or pMemory = nullptr";
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
@@ -227,11 +257,11 @@ TVector<T> TVector<T>::operator+(const TVector& vector)
 {
   if (length == 0 || pMemory == nullptr || vector.length == 0 || vector.pMemory == nullptr)
   {
-    throw "You length = 0 or pMemory = nullptr";
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   if (length != vector.length)
   {
-    throw "Length first vector != length second vector";
+    throw std::range_error("Length first vector != length second vector");
   }
   TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
@@ -245,11 +275,11 @@ TVector<T> TVector<T>::operator-(const TVector& vector)
 {
   if (length == 0 || pMemory == nullptr || vector.length == 0 || vector.pMemory == nullptr)
   {
-    throw "You length = 0 or pMemory = nullptr";
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   if (length != vector.length)
   {
-    throw "Length first vector != length second vector";
+    throw std::range_error("Length first vector != length second vector");
   }
   TVector<T> Result = TVector<T>(length);
   for (int i = 0; i < length; i++)
@@ -262,18 +292,18 @@ template <class T>
 T TVector<T>::operator*(const TVector& vector)
 {
   if (length == 0 || pMemory == nullptr || vector.length == 0 || vector.pMemory == nullptr)
-  { 
-    throw "You length = 0 or pMemory = nullptr";
+  {
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   if (length != vector.length)
   {
-    throw "Length first vector != length second vector";
+    throw std::range_error("Length first vector != length second vector");
   }
   T Result = 0;
   for (int i = 0; i < length; i++)
   {
     Result += pMemory[i]*vector.pMemory[i];
-  } 
+  }
   return Result;
 }
 template <class T>
@@ -281,15 +311,15 @@ TVector<T>& TVector<T>::operator=(const TVector& vector)
 {
   if (*this == vector)
   {
-    throw "this == this";
+    throw std::range_error("this == this");
   }
   if (length == 0 || pMemory == nullptr || vector.length == 0 || vector.pMemory == nullptr)
-  { 
-    throw "You length = 0 or pMemory = nullptr";
+  {
+    throw std::range_error("You length = 0 or pMemory = nullptr");
   }
   if (length != vector.length)
   {
-    throw "Length first vector != length second vector";
+    throw std::range_error("Length first vector != length second vector");
   }
   delete[] pMemory;
   pMemory = new T[vector.length];
@@ -304,10 +334,6 @@ TVector<T>& TVector<T>::operator=(const TVector& vector)
 template <class T>
 TVector<T>& TVector<T>::operator=(TVector&& vector)
 {
-  if (*this == vector)
-  {
-    throw "Error operation = &&";
-  }
   length = vector.length;
   delete[] pMemory;
   pMemory = new T[length];
@@ -339,25 +365,4 @@ std::ostream& operator<<(std::ostream& ostr, const TVector<T>& vector)
   return ostr;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endif

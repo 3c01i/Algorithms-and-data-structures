@@ -7,8 +7,9 @@ Fourth Lab - 17 score
 Finaly: Very good
 
 2 Course :
+1 Semester:
 First Lab - 10 score
 Second Lab - 24 score
 Third Lab - 23 score
-Fourth Lab - 
-Finaly: ????
+Fourth Lab - 10 score
+Finaly: Perfect
